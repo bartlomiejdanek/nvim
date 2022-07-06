@@ -189,13 +189,7 @@ packer.startup(function(use)
     config = get_config("lf"),
   })
 
-  if settings.theme == "nightfox" then
-    use({ "EdenEast/nightfox.nvim", config = get_config("nightfox") })
-  elseif settings.theme == "catppuccino" then
-    use({ "catppuccin/nvim", as = "catppuccin", config = get_config("catppuccin") })
-  else
-    use({ "catppuccin/nvim", as = "catppuccin", config = get_config("catppuccin") })
-  end
+  use({ "Mofiqul/dracula.nvim", as = "dracula", config = get_config("dracula") })
 
   use({ "tweekmonster/startuptime.vim" })
 
@@ -259,7 +253,7 @@ packer.startup(function(use)
 
   use({ "Djancyp/cheat-sheet" })
 
-  use({ "vimpostor/vim-tpipeline" })
+  -- use({ "vimpostor/vim-tpipeline" })
 
   use({
     "anuvyklack/hydra.nvim",
