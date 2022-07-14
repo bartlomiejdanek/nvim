@@ -274,6 +274,10 @@ packer.startup(function(use)
       require("focus").setup()
     end,
   })
+
+  use({
+    "juliosueiras/vim-terraform-completion"
+  })
 end)
 
 -- TODO: ????
