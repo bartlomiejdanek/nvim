@@ -32,4 +32,7 @@ vim.g.dracula_lualine_bg_color = "#44475a"
 -- set italic comment
 vim.g.dracula_italic_comment = true
 
-vim.cmd [[colorscheme dracula]]
+vim.cmd([[colorscheme dracula]])
+
+-- vim.api.nvim_command("highlight TSParameter guifg=#ffffff")
+vim.api.nvim_command("highlight TSField guifg=#dde0e5")
