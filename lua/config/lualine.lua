@@ -17,13 +17,29 @@ require("lualine").setup({
     -- section_separators = '',
     theme = "auto",
     icons_enabled = true,
+
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = {},
     always_divide_middle = false,
   },
   sections = {
-    lualine_a = { { "b:gitsigns_head", icon = "" }, { "diff", source = diff_source } },
+    lualine_a = {
+      {
+        "b:gitsigns_head",
+        icon = "",
+      },
+      {
+        "diff",
+        source = diff_source,
+        diff_color = {
+          -- Same color values as the general color option can be used here.
+          added = { fg = "#282a36", gui = "bold" }, -- Changes the diff's added color
+          modified = { fg = "#44475a", gui = "bold" }, -- Changes the diff's added color
+          removed = { fg = "#ff5555", gui = "bold" }, -- Changes the diff's added color
+        },
+      },
+    },
     lualine_b = {
       {
         "diagnostics",
@@ -35,10 +51,10 @@ require("lualine").setup({
       },
     },
     lualine_c = {
-      {
-        "filetype",
-        icon_only = true, -- Display only an icon for filetype
-      },
+      -- {
+      --   "filetype",
+      --   icon_only = true, -- Display only an icon for filetype
+      -- },
       {
         "filename",
         file_status = true, -- Displays file status (readonly status, modified status)
@@ -49,9 +65,9 @@ require("lualine").setup({
       { navic.get_location, cond = navic.is_available },
     },
     lualine_x = {
-      "encoding",
-      "fileformat",
-      "filesize",
+      -- "encoding",
+      -- "fileformat",
+      -- "filesize",
     },
     lualine_y = { "progress" },
     lualine_z = { "location" },

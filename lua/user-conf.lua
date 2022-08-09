@@ -9,7 +9,7 @@ M.grepprg = "rg --hidden --vimgrep --smart-case --"
 -- set numbered lines
 M.number = true
 -- enable mouse see :h mouse
-M.mouse = "nv"
+M.mouse = "nva"
 -- set relative numbered lines
 M.relative_number = true
 -- enable or disable listchars
@@ -18,6 +18,6 @@ M.list = true
 -- M.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣"
 M.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<"
 -- enable PackerSync on plugins.lua save
-M.packer_auto_sync = false
+M.packer_auto_sync = true
 
 return M

@@ -276,7 +276,12 @@ packer.startup(function(use)
   })
 
   use({
-    "juliosueiras/vim-terraform-completion"
+    "hashivim/vim-terraform",
+    config = get_config("terraform"),
+  })
+
+  use({
+    "juliosueiras/vim-terraform-completion",
   })
 end)
 
