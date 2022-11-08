@@ -9,7 +9,7 @@ M.grepprg = "rg --hidden --vimgrep --smart-case --"
 -- set numbered lines
 M.number = true
 -- enable mouse see :h mouse
-M.mouse = "nva"
+M.mouse = ""
 -- set relative numbered lines
 M.relative_number = true
 -- enable or disable listchars

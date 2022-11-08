@@ -62,7 +62,7 @@ packer.startup(function(use)
     "nvim-lualine/lualine.nvim",
     config = get_config("lualine"),
     event = "VimEnter",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    requires = { "kyazdani42/nvim-web-devicons" },
   })
 
   use({ "windwp/nvim-autopairs", config = get_config("nvim-autopairs") })
@@ -132,7 +132,8 @@ packer.startup(function(use)
 
   use({
     "kevinhwang91/nvim-bqf",
-    requires = { { "junegunn/fzf", module = "nvim-bqf" }, config = get_config("nvim-bqf") },
+    requires = { "junegunn/fzf", module = "nvim-bqf" },
+    config = get_config("nvim-bqf"),
   })
 
   use("famiu/bufdelete.nvim")
@@ -282,6 +283,11 @@ packer.startup(function(use)
 
   use({
     "juliosueiras/vim-terraform-completion",
+  })
+
+  use({
+    "vlelo/arduino-helper.nvim",
+    config = get_config("arduino"),
   })
 end)
 

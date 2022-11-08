@@ -5,6 +5,7 @@ local wo = vim.wo
 local fn = vim.fn
 
 vim.cmd("set inccommand=split")
+vim.cmd("set nowrap")
 o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50" -- block in normal and beam cursor in insert mode
 o.updatetime = 300 -- faster completion
 o.timeoutlen = 400 -- time to wait for a mapped sequence to complete (in milliseconds)
