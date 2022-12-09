@@ -269,6 +269,8 @@ packer.startup(function(use)
 
   if settings.theme == "nightfox" then
     use({ "EdenEast/nightfox.nvim", config = get_config("ui.themes.nightfox") })
+  elseif settings.theme == "dracula" then
+    use({ "Mofiqul/dracula.nvim", as = "dracula", config = get_config("ui.themes.dracula") })
   elseif settings.theme == "tundra" then
     use({ "sam4llis/nvim-tundra", config = get_config("ui.themes.tundra") })
   elseif settings.theme == "tokyonight" then
