@@ -139,6 +139,10 @@ packer.startup(function(use)
   use({ "famiu/bufdelete.nvim" })
 
   use({ "rafcamlet/nvim-luapad", ft = "lua" })
+
+  use({ "hashivim/vim-terraform", config = get_config("terraform") })
+
+  use({ "juliosueiras/vim-terraform-completion" })
   -- }}} Coding
 
   -- {{{ Dap
