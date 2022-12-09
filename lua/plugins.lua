@@ -143,6 +143,8 @@ packer.startup(function(use)
   use({ "hashivim/vim-terraform", config = get_config("terraform") })
 
   use({ "juliosueiras/vim-terraform-completion" })
+
+  use({ "vlelo/arduino-helper.nvim", config = get_config("arduino") })
   -- }}} Coding
 
   -- {{{ Dap
