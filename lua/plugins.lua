@@ -139,12 +139,6 @@ packer.startup(function(use)
   use({ "famiu/bufdelete.nvim" })
 
   use({ "rafcamlet/nvim-luapad", ft = "lua" })
-
-  use({ "hashivim/vim-terraform", config = get_config("terraform") })
-
-  use({ "juliosueiras/vim-terraform-completion" })
-
-  use({ "vlelo/arduino-helper.nvim", config = get_config("arduino") })
   -- }}} Coding
 
   -- {{{ Dap
@@ -311,6 +305,12 @@ packer.startup(function(use)
     },
     disable = settings.disable_noice,
   })
+
+  use({ "hashivim/vim-terraform", config = get_config("coding.terraform") })
+
+  use({ "juliosueiras/vim-terraform-completion" })
+
+  use({ "vlelo/arduino-helper.nvim", config = get_config("coding.arduino") })
 
   -- }}} UI
 
