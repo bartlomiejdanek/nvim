@@ -44,6 +44,7 @@ return {
           python = { "isort", "ruff_format" },
           sh = { "shfmt" },
           terraform = { "terraform_fmt" },
+          hcl = { "terraform_fmt" },
           tex = { "latexindent" },
           typst = { "typstfmt" },
           yaml = { "yamlfmt" },

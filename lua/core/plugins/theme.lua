@@ -40,6 +40,12 @@ local themes = {
       require("core.plugins.themes.catppuccin")
     end,
   },
+  dracula = {
+    "Mofiqul/dracula.nvim",
+    config = function()
+      require("core.plugins.themes.dracula")
+    end,
+  },
 }
 
 local selectedTheme = themes[vim.g.config.theme.name]

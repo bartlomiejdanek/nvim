@@ -25,6 +25,10 @@ return {
     "stylua",
     "shfmt",
     "typstfmt",
+    "actionlint",
+    "yq",
+    "jq",
+    "sqlfmt",
     -- Linter
     "hadolint",
     "eslint_d",
