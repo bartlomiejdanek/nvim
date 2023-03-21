@@ -36,6 +36,9 @@ map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "<leader>bD", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all but the current buffer" })
 map("n", "<leader>bd", "<cmd>Bdelete<cr>", { desc = "Close buffer" })
 map("n", "<leader><tab>", "<cmd>b#<cr>", { desc = "Previously openend Buffer" })
+map("n", "<leader>h[", '<cmd>lua require("harpoon.mark").add_file()<cr>', { desc = "Harpoon Mark" })
+map("n", "<leader>h]", "<cmd>Telescope harpoon marks<cr>", { desc = "Harpoon List" })
+map("n", "<leader><tab>", "<cmd>e#<cr>", { desc = "Previous Buffer" }) -- TODO: better desc
 
 -- Cancel search highlighting with ESC
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Clear hlsearch and ESC" })
@@ -104,7 +107,6 @@ map("n", "<leader>za", "zg", { desc = "Add word" })
 -- Reload snippets folder
 -- TODO make path system independent
 map("n", "<leader>ms", "<cmd>source ~/.config/nvim/snippets/*<cr>", { desc = "Reload snippets" })
-
 
 -- Quickfix
 -- TODO: Move to trouble configuration?

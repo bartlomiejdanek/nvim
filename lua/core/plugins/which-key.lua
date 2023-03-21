@@ -23,6 +23,8 @@ local M = {
     groups = {
       mode = { "n", "v" },
       ["<leader>b"] = { name = "Buffers" },
+      ["<leader>h"] = { name = "Harpoon" },
+      ["<leader>x"] = { "Trouble" },
       ["<leader>f"] = { name = "Files" },
       ["<leader>l"] = { name = "LSP" },
       ["<leader>m"] = { name = "Misc" },

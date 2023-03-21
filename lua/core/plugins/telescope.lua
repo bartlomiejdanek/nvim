@@ -41,7 +41,7 @@ end
 local default_config = {
   grep_hidden = true,
   fzf_native = false,
-  show_untracked_files = false,
+  show_untracked_files = true,
   keys = {
     -- Search stuff
     { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands" },
@@ -68,6 +68,7 @@ local default_config = {
     { "<leader>ff", "<cmd>" .. require("utils.functions").project_files() .. "<cr>", desc = "Open file" },
     { "<leader>fF", "<cmd>Telescope find_files<cr>", desc = "Open file (ignore git)" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
+    { "<leader>fh", "<cmd>" .. require("utils.functions").project_files() .. "<cr>", desc = "Harpoon" },
     -- misc
     { "<leader>mt", "<cmd>Telescope<cr>", desc = "Telescope" },
     -- Other
