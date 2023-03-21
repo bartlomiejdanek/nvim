@@ -45,6 +45,7 @@ return {
           sh = { "shfmt" },
           terraform = { "terraform_fmt" },
           ["terraform-vars"] = { "terraform_fmt" },
+          hcl = { "terraform_fmt" },
           tex = { "latexindent" },
           toml = { "taplo" },
           typst = { "typstfmt" },

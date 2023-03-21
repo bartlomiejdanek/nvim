@@ -26,6 +26,10 @@ return {
     "shfmt",
     "taplo",
     "typstfmt",
+    "actionlint",
+    "yq",
+    "jq",
+    "sqlfmt",
     -- Linter
     "hadolint",
     "eslint_d",
