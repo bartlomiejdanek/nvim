@@ -8,6 +8,7 @@ local M = {
     "mfussenegger/nvim-ts-hint-textobject",
     "windwp/nvim-ts-autotag",
     "nvim-treesitter/playground",
+    "MichaHoffmann/tree-sitter-hcl",
   },
   config = function()
     local conf = vim.g.config

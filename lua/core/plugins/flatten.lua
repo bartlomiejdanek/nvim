@@ -1,5 +1,6 @@
 return {
   "willothy/flatten.nvim",
+  enabled = vim.g.config.plugins.flatten.enable,
   opts = {
     window = {
       open = "current",
