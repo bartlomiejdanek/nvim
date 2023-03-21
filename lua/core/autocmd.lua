@@ -127,10 +127,11 @@ api.nvim_create_autocmd(
   { "BufRead", "BufNewFile" },
   -- { pattern = { "*.txt", "*.md", "*.tex" }, command = [[setlocal spell<cr> setlocal spelllang=en,de<cr>]] }
   {
-    pattern = { "*.txt", "*.md", "*.tex" },
+    -- pattern = { "*.txt", "*.md", "*.tex" },
+    pattern = {},
     callback = function()
       vim.opt.spell = true
-      vim.opt.spelllang = "en,de"
+      vim.opt.spelllang = "en"
     end,
   }
 )
