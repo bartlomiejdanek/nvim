@@ -70,6 +70,7 @@ local M = {
     { "<leader>ff", "<cmd>" .. require("utils.functions").project_files() .. "<cr>", desc = "Open file" },
     { "<leader>fF", "<cmd>Telescope find_files<cr>", desc = "Open file (ignore git)" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent files" },
+    { "<leader>fh", "<cmd>" .. require("utils.functions").project_files() .. "<cr>", desc = "Harpoon" },
     -- misc
     { "<leader>mt", "<cmd>Telescope<cr>", desc = "Telescope" },
     -- Other
@@ -193,6 +194,8 @@ local M = {
     telescope.load_extension("projects")
     telescope.load_extension("zoxide")
     telescope.load_extension("heading")
+    -- telescope.load_extension("make")
+    telescope.load_extension("harpoon")
     if conf.noice.enable then
       telescope.load_extension("noice")
     end
