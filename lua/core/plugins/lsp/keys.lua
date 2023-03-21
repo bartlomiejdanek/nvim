@@ -23,6 +23,49 @@ else
 end
 
 M._keys = {
+  {
+    "<leader>xx",
+    function()
+      require("trouble").toggle()
+    end,
+    desc = "Trouble Toggle",
+  },
+  {
+    "<leader>xw",
+    function()
+      require("trouble").toggle("workspace_diagnostics")
+    end,
+    desc = "Workspace Diagnostics",
+  },
+  {
+    "<leader>xd",
+    function()
+      require("trouble").toggle("document_diagnostics")
+    end,
+    desc = "Document Diagnostics",
+  },
+  {
+    "<leader>xq",
+    function()
+      require("trouble").toggle("quickfix")
+    end,
+    desc = "Quickfix",
+  },
+  {
+    "<leader>xl",
+    function()
+      require("trouble").toggle("loclist")
+    end,
+    desc = "Loclist",
+  },
+  {
+    "<leader>gR",
+    function()
+      require("trouble").toggle("lsp_references")
+    end,
+    desc = "LSP References",
+  },
+  { "<leader>lD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
   { "<leader>ll", vim.diagnostic.open_float, desc = "Line Diagnostics" },
   -- { "<leader>lR", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
   {

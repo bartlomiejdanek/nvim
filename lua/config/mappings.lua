@@ -35,6 +35,9 @@ map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 map("n", "<leader>bD", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all but the current buffer" })
 map("n", "<leader><tab>", "<cmd>b#<cr>", { desc = "Previously openend Buffer" })
+map("n", "<leader>h[", '<cmd>lua require("harpoon.mark").add_file()<cr>', { desc = "Harpoon Mark" })
+map("n", "<leader>h]", "<cmd>Telescope harpoon marks<cr>", { desc = "Harpoon List" })
+map("n", "<leader><tab>", "<cmd>e#<cr>", { desc = "Previous Buffer" }) -- TODO: better desc
 
 -- Cancel search highlighting with ESC
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Clear hlsearch and ESC" })
@@ -89,3 +92,27 @@ map("n", "<leader>za", "zg", { desc = "Add word" })
 -- Reload snippets folder
 -- TODO make path system independent
 map("n", "<leader>ms", "<cmd>source ~/.config/nvim/snippets/*<cr>", { desc = "Reload snippets" })
+
+-- Quickfix
+-- TODO: Move to trouble configuration?
+local trouble_enabled, _ = pcall(require, "trouble")
+---@type table<string><function|string>
+local qf_func = {}
+
+if trouble_enabled then
+  qf_func["toggle"] = "<cmd>Trouble qflist toggle<cr>"
+  qf_func["next"] = function()
+    require("trouble").next({ skip_groups = true, jump = true })
+  end
+  qf_func["previous"] = function()
+    require("trouble").prev({ skip_groups = true, jump = true })
+  end
+else
+  qf_func["toggle"] = "<cmd>lua require('utils.functions').toggle_qf()<cr>"
+  qf_func["next"] = "<cmd>cnext<cr>"
+  qf_func["previous"] = "<cmd>cprevious<cr>"
+end
+
+map("n", "<leader>qj", qf_func["next"], { desc = "Next entry" })
+map("n", "<leader>qk", qf_func["previous"], { desc = "Previous entry" })
+map("n", "<leader>qq", qf_func["toggle"], { desc = "Toggle Quickfix" })

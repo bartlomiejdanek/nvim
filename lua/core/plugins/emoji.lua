@@ -40,4 +40,9 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require("emoji").setup(opts)
+    require("telescope").load_extension("emoji")
+  end,
+  -- dev = true,
 }

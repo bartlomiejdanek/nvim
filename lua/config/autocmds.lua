@@ -90,6 +90,16 @@ api.nvim_create_autocmd("BufReadPost", {
   desc = "go to last loc when opening a buffer",
 })
 
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    require("go.format").goimport()
+  end,
+  group = format_sync_grp,
+})
+
+-- windows to close with "q"
 api.nvim_create_autocmd("FileType", {
   pattern = {
     "dap-float",
@@ -133,9 +143,10 @@ api.nvim_create_autocmd(
   -- { pattern = { "*.txt", "*.md", "*.tex" }, command = [[setlocal spell<cr> setlocal spelllang=en,de<cr>]] }
   {
     pattern = { "*.txt", "*.md", "*.tex", "*.typ" },
+    -- pattern = { "*.txt", "*.md", "*.tex" },
     callback = function()
       vim.opt.spell = true
-      vim.opt.spelllang = "en,de"
+      vim.opt.spelllang = "en"
     end,
     desc = "Enable spell checking for certain file types",
   }
